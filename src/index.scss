@@ -1,6 +1,6 @@
-@import 'node_modu';
+@import '../node_modules/bulma/bulma';
+@import '../node_modules/bulma-extensions/src/sass/index';
 
-@import '~bulma-extensions';
 
 body {
   margin: 0;
