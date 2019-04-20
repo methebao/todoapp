@@ -1,0 +1,13 @@
+.form {
+  display: flex;
+  justify-content: center;
+  .custom {
+    max-width: 50em;
+    height: 4rem;
+
+    &::-webkit-input-placeholder {
+      font-size: 1.3rem;
+      padding-left: 1rem;
+    }
+  }
+}

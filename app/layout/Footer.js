@@ -8,7 +8,7 @@ const Footer = () => (
           Built on <strong>React</strong> with <strong>Bulma</strong> by
           <a href="https://github.com/methebao"> thebaoDev</a>
           <br />
-          Copyright 2018
+          Copyright 2019
         </p>
       </div>
     </div>

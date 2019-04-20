@@ -58,6 +58,7 @@
     "styled-components": "^4.2.0",
     "terser-webpack-plugin": "1.2.2",
     "url-loader": "1.1.2",
+    "uuid": "^3.3.2",
     "webpack": "^4.30.0",
     "webpack-dev-server": "3.1.14",
     "webpack-manifest-plugin": "2.0.4",
@@ -134,6 +135,11 @@
         "react-app",
         "babel-preset-react-app"
       ]
+    },
+    "prettier": {
+      "singleQuote": true,
+      "tabWidth": 4,
+      "usetabs": true
     }
   }
 }
