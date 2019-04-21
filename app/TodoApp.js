@@ -1,4 +1,5 @@
 import React from "react";
+import APIClient from "./services/APIClient";
 import TodoForm from "./todoApp/TodoForm";
 import TodoList from "./todoApp/TodoList";
 import { TodoFilter, filters } from "./todoApp/TodoFilter";
@@ -6,6 +7,7 @@ import { withRouter } from "react-router-dom";
 import Paper from "./layout/Pagination";
 import "./styles/main.scss";
 const TASKS_PER_PAGE = 2;
+
 class TodoApp extends React.Component {
   constructor(props) {
     super(props);
@@ -30,6 +32,11 @@ class TodoApp extends React.Component {
       filter: filters.ALL_TASKS,
       currentPage: 1
     };
+    const mockApi = new APIClient({
+      url: "http://5cbbc7e8fa84180014bdb0e5.mockapi.io/api/"
+    });
+    mockApi.createResource({ name: "todos" });
+    mockApi.endpoints.todos.getAll().then(({ data }) => console.log(data));
   }
 
   componentDidMount() {
