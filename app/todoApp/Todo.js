@@ -27,6 +27,12 @@ class Todo extends React.Component {
     this.submitEditing();
     this.setState({ isEditing: !this.state.isEditing });
   };
+  handleKeyPress = key => {
+    if (key === "Enter") {
+      this.submitEditing();
+      this.setState({ isEditing: !this.state.isEditing });
+    }
+  };
   handleClick = e => {
     if (this.node.contains(e.target)) {
       return;
@@ -65,6 +71,7 @@ class Todo extends React.Component {
                 className="input"
                 type={"text"}
                 value={this.state.content}
+                onKeyPress={e => this.handleKeyPress(e.key)}
                 onChange={e => {
                   this.handleEditing(e.target.value);
                 }}

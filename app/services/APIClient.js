@@ -1,5 +1,6 @@
 import axios from "axios";
 
+const baseURL = "http://5cbbc7e8fa84180014bdb0e5.mockapi.io/api";
 class APIClient {
   constructor({ url }) {
     this.url = url;
@@ -17,8 +18,11 @@ class APIClient {
       axios.post(resourceURL, objectToCreate);
     endpoints.update = objectToUpdate =>
       axios.put(`${resourceURL}/${objectToUpdate.id}`, objectToUpdate);
+
     endpoints.delete = ({ id }) => axios.delete(`${resourceURL}/${id}`);
     return endpoints;
   }
 }
-export default APIClient;
+export default new APIClient({
+  url: baseURL
+});

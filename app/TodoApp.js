@@ -12,31 +12,11 @@ class TodoApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tasks: [
-        {
-          id: 1,
-          content: "This is 1st Todo",
-          isCompleted: false
-        },
-        {
-          id: 2,
-          content: "This is 2st Todo",
-          isCompleted: true
-        },
-        {
-          id: 3,
-          content: "This is 3st Todo",
-          isCompleted: false
-        }
-      ],
+      tasks: [],
       filter: filters.ALL_TASKS,
       currentPage: 1
     };
-    const mockApi = new APIClient({
-      url: "http://5cbbc7e8fa84180014bdb0e5.mockapi.io/api/"
-    });
-    mockApi.createResource({ name: "todos" });
-    mockApi.endpoints.todos.getAll().then(({ data }) => console.log(data));
+    APIClient.createResource({ name: "todos" });
   }
 
   componentDidMount() {
@@ -45,8 +25,8 @@ class TodoApp extends React.Component {
       this.setupRouteFilters.bind(this),
       false
     );
-
     this.setupRouteFilters();
+    APIClient.endpoints.todos.getAll().then(({ data }) => this.setTasks(data));
   }
   componentWillUnmount() {
     window.removeEventListener(
@@ -102,23 +82,36 @@ class TodoApp extends React.Component {
     this.setState({ tasks });
   }
   addTask(task) {
-    this.setTasks([...this.state.tasks, task]);
+    APIClient.endpoints.todos.create(task).then(response => {
+      if (response.status === 201 || response === 200) {
+        this.setTasks([...this.state.tasks, task]);
+      }
+    });
   }
-  editTask(id, newContent) {
-    this.setTasks(
-      this.state.tasks.map(task => {
-        if (task.id === id) {
-          task.content = newContent;
-        }
-        return task;
-      })
-    );
+  editTask(newTask) {
+    APIClient.endpoints.todos.update(newTask).then(({ data }) => {
+      if (data) {
+        this.setTasks(
+          this.state.tasks.map(task => {
+            if (task.id === data.id) {
+              task.content = data.content;
+            }
+            return task;
+          })
+        );
+      }
+    });
   }
   toogleTask(id) {
     this.setTasks(
       this.state.tasks.map(task => {
-        if (id === task.id) {
+        if (task.id === id) {
           task.isCompleted = !task.isCompleted;
+          APIClient.endpoints.todos.update(task).then(({ data }) => {
+            if (data) {
+              console.log("Toggled: " + data);
+            }
+          });
         }
         return task;
       })
@@ -132,11 +125,15 @@ class TodoApp extends React.Component {
     );
   }
   deleteTask(id) {
-    this.setTasks(
-      this.state.tasks.filter(task => {
-        return id !== task.id;
-      })
-    );
+    APIClient.endpoints.todos.delete({ id }).then(({ data }) => {
+      if (data) {
+        this.setTasks(
+          this.state.tasks.filter(task => {
+            return id !== task.id;
+          })
+        );
+      }
+    });
   }
   getTaskLeftCount() {
     return this.state.tasks.filter(task => {
@@ -172,7 +169,7 @@ class TodoApp extends React.Component {
                 tasks={filteredTasks}
                 onTaskToggle={id => this.toogleTask(id)}
                 onTaskDelete={id => this.deleteTask(id)}
-                onTaskEdit={(id, newContent) => this.editTask(id, newContent)}
+                onTaskEdit={newTask => this.editTask(newTask)}
               />
             </div>
             <Paper
