@@ -1,5 +1,7 @@
 import React from "react";
 
+import styles from "./TodoFilter.module.scss";
+
 const filters = {
   ALL_TASKS: "all",
   ACTIVE_TASKS: "active",
@@ -19,7 +21,7 @@ const TodoFilter = ({ taskLeft, filter, onClearCompleted }) => {
 
   return (
     <div className="box">
-      <div className="media">
+      <div className={`media ${styles.filter}`}>
         <div className="media-left">
           <span className="tag is-primary is-medium">{getCountText()}</span>
         </div>

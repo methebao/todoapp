@@ -1,0 +1,32 @@
+/*------------------------------------*/
+/* MEDIA QUERIES MIXINS  */
+/*------------------------------------*/
+
+/*
+	FROM--------------------TO-------------------DEVICES
+	0px                   	425px				  *Current Styling
+	426px				    768px					Tablet
+	768px				    1024px					Desktop
+	1025px				    >1024px					Big Desktops
+*/
+// TODOS: Update comment
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 26.5625em) {
+      @content;
+    }
+  } @else {
+    $minWidth: map-get(
+                    (
+                            tablet: 26.625em,
+                            desktop: 48em,
+                            big-desktop: 64.0625em,
+                    ),
+                    $breakpoint
+    );
+    @media (min-width: $minWidth) {
+      @content;
+    }
+  }
+}
