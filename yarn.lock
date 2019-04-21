@@ -2464,7 +2464,15 @@ bulma-extensions@^6.2.4:
   resolved "https://registry.yarnpkg.com/bulma-extensions/-/bulma-extensions-6.2.4.tgz#28f5589055b1c6bf894994f8e8260426e9ac1f0b"
   integrity sha512-AaG3/OfGgdx03fQDabLadagATVpBvXXhFjiv7lnOd9DzTHRPC3fjlNL3qnVQ8IFS9t428FvS3lAmBmtfQh7ylA==
 
-bulma@^0.7.4:
+bulma-pagination-react@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/bulma-pagination-react/-/bulma-pagination-react-0.1.1.tgz#75b1a40e59a72e992e86b53876a6e52ebc0463bf"
+  integrity sha512-JFubeZYjI1D+Jx8WH6BUvVOfeNmI/tmzvE3dmBDEh3FnS9JRi5AMFKq335dAFpPa6sP2RPSywD9Agz8NHfaEGw==
+  dependencies:
+    bulma "^0.7.2"
+    prop-types "^15.6.2"
+
+bulma@^0.7.2, bulma@^0.7.4:
   version "0.7.4"
   resolved "https://registry.yarnpkg.com/bulma/-/bulma-0.7.4.tgz#7e74512e9118d9799021339e67e365ee0ac4f3f9"
   integrity sha512-krG2rP6eAX1WE0sf6O0SC/FUVSOBX4m1PBC2+GKLpb2pX0qanaDqcv9U2nu75egFrsHkI0zdWYuk/oGwoszVWg==

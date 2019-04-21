@@ -3,7 +3,9 @@ import TodoForm from "./todoApp/TodoForm";
 import TodoList from "./todoApp/TodoList";
 import { TodoFilter, filters } from "./todoApp/TodoFilter";
 import { withRouter } from "react-router-dom";
+import Paper from "./layout/Pagination";
 
+const TASKS_PER_PAGE = 2;
 class TodoApp extends React.Component {
   constructor(props) {
     super(props);
@@ -25,7 +27,8 @@ class TodoApp extends React.Component {
           isCompleted: false
         }
       ],
-      filter: filters.ALL_TASKS
+      filter: filters.ALL_TASKS,
+      currentPage: 1
     };
   }
 
@@ -44,6 +47,36 @@ class TodoApp extends React.Component {
       this.setupRouteFilters.bind(this),
       false
     );
+  }
+  getFilteredTasks() {
+    return this.state.tasks.filter(task => {
+      switch (this.state.filter) {
+        case filters.ACTIVE_TASKS:
+          return !task.isCompleted;
+        case filters.COMPLETED_TASKS:
+          return task.isCompleted;
+        default:
+          return true;
+      }
+    });
+  }
+  getCurrentPageTasks(page, tasksPerPage) {
+    let activeTasks = this.getFilteredTasks();
+    let startPageIndex = page * tasksPerPage - tasksPerPage;
+    let pageTask = [];
+    for (let i = startPageIndex; i < startPageIndex + tasksPerPage; i++) {
+      if (activeTasks[i]) {
+        pageTask.push(activeTasks[i]);
+      }
+    }
+    return pageTask;
+  }
+  changePage(page, tasksPerPage) {
+    debugger;
+    this.setState({
+      currentPage: page,
+      currentPageTasks: this.getCurrentPageTasks(page, tasksPerPage)
+    });
   }
   setupRouteFilters() {
     let appPath = "todo-app/";
@@ -84,6 +117,13 @@ class TodoApp extends React.Component {
       })
     );
   }
+  clearCompleted() {
+    this.setTasks(
+      this.state.tasks.filter(task => {
+        return !task.isCompleted;
+      })
+    );
+  }
   deleteTask(id) {
     this.setTasks(
       this.state.tasks.filter(task => {
@@ -91,17 +131,18 @@ class TodoApp extends React.Component {
       })
     );
   }
+  getTaskLeftCount() {
+    return this.state.tasks.filter(task => {
+      return !task.isCompleted;
+    }).length;
+  }
   render() {
-    let filteredTasks = this.state.tasks.filter(task => {
-      switch (this.state.filter) {
-        case filters.ACTIVE_TASKS:
-          return !task.isCompleted;
-        case filters.COMPLETED_TASKS:
-          return task.isCompleted;
-        default:
-          return true;
-      }
-    });
+    let taskLeftCount = this.getTaskLeftCount();
+    let allFilteredTasks = this.getFilteredTasks();
+    let filteredTasks = this.getCurrentPageTasks(
+      this.state.currentPage,
+      TASKS_PER_PAGE
+    );
     return (
       <main>
         <section className="hero is-primary">
@@ -127,13 +168,21 @@ class TodoApp extends React.Component {
                 onTaskEdit={(id, newContent) => this.editTask(id, newContent)}
               />
             </div>
+            <Paper
+              tasks={allFilteredTasks}
+              currentPage={this.state.currentPage}
+              perPage={TASKS_PER_PAGE}
+              onChangePage={(page, perPage) => this.changePage(page, perPage)}
+            />
           </div>
         </section>
-        <section className=" todo-filter">
+
+        <section className=" section todo-filter">
           <div className="container">
             <TodoFilter
-              count={this.state.tasks.length}
+              taskLeft={taskLeftCount}
               filter={this.state.filter}
+              onClearCompleted={() => this.clearCompleted()}
             />
           </div>
         </section>

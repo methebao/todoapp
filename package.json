@@ -18,6 +18,7 @@
     "bfj": "6.1.1",
     "bulma": "^0.7.4",
     "bulma-extensions": "^6.2.4",
+    "bulma-pagination-react": "^0.1.1",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
     "css-loader": "1.0.0",
     "dotenv": "6.0.0",

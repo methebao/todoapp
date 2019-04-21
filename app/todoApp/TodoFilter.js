@@ -6,12 +6,12 @@ const filters = {
   COMPLETED_TASKS: "completed"
 };
 
-const TodoFilter = ({ count, filter }) => {
-  const getCountText = count => {
-    if (count > 2) {
-      return `${count} tasks`;
+const TodoFilter = ({ taskLeft, filter, onClearCompleted }) => {
+  const getCountText = () => {
+    if (taskLeft > 2) {
+      return `${taskLeft} tasks left`;
     }
-    return `${count} task`;
+    return `${taskLeft} task left`;
   };
   const getActiveFilterClass = filterType => {
     return filter === filterType ? "button is-active is-primary" : "button";
@@ -21,9 +21,7 @@ const TodoFilter = ({ count, filter }) => {
     <div className="box">
       <div className="media">
         <div className="media-left">
-          <span className="tag is-primary is-medium">
-            {getCountText(count)}
-          </span>
+          <span className="tag is-primary is-medium">{getCountText()}</span>
         </div>
         <div className="media-content">
           <div className="buttons has-addons is-centered">
@@ -45,7 +43,9 @@ const TodoFilter = ({ count, filter }) => {
           </div>
         </div>
         <div className="media-right">
-          <a className="button is-light">Clear Completed</a>
+          <a className="button is-light" onClick={onClearCompleted}>
+            Clear Completed
+          </a>
         </div>
       </div>
     </div>
