@@ -23,7 +23,7 @@ const TodoFilter = ({ taskLeft, filter, onClearCompleted }) => {
     <div className="box">
       <div className={`media ${styles.filter}`}>
         <div className="media-left">
-          <span className="tag is-primary is-medium">{getCountText()}</span>
+          <span className="tag is-dark is-medium">{getCountText()}</span>
         </div>
         <div className="media-content">
           <div className="buttons has-addons is-centered">

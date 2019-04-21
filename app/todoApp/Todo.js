@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Todo.module.scss";
 
 class Todo extends React.Component {
   constructor(props) {
@@ -44,12 +45,14 @@ class Todo extends React.Component {
     } = this.props;
     return (
       <div id={id} className="media">
-        <div className="media-left">
+        <div className={`${styles.checkbox} media-left`}>
           <input
+            className={styles.input}
             type={"checkbox"}
             checked={isCompleted}
             onChange={onCheckBoxToggle}
           />
+          <span className={styles.checkmark} />
         </div>
         <div className="media-content">
           <div

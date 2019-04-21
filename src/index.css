@@ -13909,3 +13909,6 @@ input[type=range].slider {
 body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
+
+.section {
+  padding: 1.5rem 1.5rem; }

@@ -4,7 +4,7 @@ import TodoList from "./todoApp/TodoList";
 import { TodoFilter, filters } from "./todoApp/TodoFilter";
 import { withRouter } from "react-router-dom";
 import Paper from "./layout/Pagination";
-
+import "./styles/main.scss";
 const TASKS_PER_PAGE = 2;
 class TodoApp extends React.Component {
   constructor(props) {
