@@ -47,9 +47,22 @@ class Header extends Component {
                 className="icon has-text-primary"
                 style={{ marginRight: 5 }}
               >
+                <i className="fab fa-react" />
+              </span>
+              Todo App
+            </NavLink>
+            <NavLink
+              className="navbar-item"
+              to="todo-app-redux"
+              activeClassName="is-active"
+            >
+              <span
+                className="icon has-text-primary"
+                style={{ marginRight: 5 }}
+              >
                 <i className="fas fa-code" />
               </span>
-              To do App
+              Todo Redux App
             </NavLink>
           </div>
           <div className="navbar-end">
