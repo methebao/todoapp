@@ -5,7 +5,10 @@ import TodoList from "./todoApp/TodoList";
 import { TodoFilter, filters } from "./todoApp/TodoFilter";
 import { withRouter } from "react-router-dom";
 import Paper from "./layout/Pagination";
+import LoadingSpinner from "./components/LoadingSpinner";
+
 import "./styles/main.scss";
+
 const TASKS_PER_PAGE = 2;
 
 class TodoApp extends React.Component {
@@ -13,6 +16,7 @@ class TodoApp extends React.Component {
     super(props);
     this.state = {
       tasks: [],
+      isLoading: true,
       filter: filters.ALL_TASKS,
       currentPage: 1
     };
@@ -28,6 +32,7 @@ class TodoApp extends React.Component {
     this.setupRouteFilters();
     APIClient.endpoints.todos.getAll().then(({ data }) => this.setTasks(data));
   }
+
   componentWillUnmount() {
     window.removeEventListener(
       "hashchange",
@@ -35,6 +40,7 @@ class TodoApp extends React.Component {
       false
     );
   }
+
   getFilteredTasks() {
     return this.state.tasks.filter(task => {
       switch (this.state.filter) {
@@ -47,6 +53,7 @@ class TodoApp extends React.Component {
       }
     });
   }
+
   getCurrentPageTasks(page, tasksPerPage) {
     let activeTasks = this.getFilteredTasks();
     let startPageIndex = page * tasksPerPage - tasksPerPage;
@@ -58,13 +65,14 @@ class TodoApp extends React.Component {
     }
     return pageTask;
   }
+
   changePage(page, tasksPerPage) {
-    debugger;
     this.setState({
       currentPage: page,
       currentPageTasks: this.getCurrentPageTasks(page, tasksPerPage)
     });
   }
+
   setupRouteFilters() {
     let appPath = "todo-app/";
     switch (window.location.hash.slice(2)) {
@@ -78,9 +86,11 @@ class TodoApp extends React.Component {
         this.setState({ filter: filters.ALL_TASKS });
     }
   }
+
   setTasks(tasks) {
-    this.setState({ tasks });
+    this.setState({ tasks, isLoading: false });
   }
+
   addTask(task) {
     APIClient.endpoints.todos.create(task).then(response => {
       if (response.status === 201 || response === 200) {
@@ -88,7 +98,9 @@ class TodoApp extends React.Component {
       }
     });
   }
+
   editTask(newTask) {
+    this.setState({ isLoading: true });
     APIClient.endpoints.todos.update(newTask).then(({ data }) => {
       if (data) {
         this.setTasks(
@@ -117,14 +129,17 @@ class TodoApp extends React.Component {
       })
     );
   }
+
   clearCompleted() {
-    this.setTasks(
-      this.state.tasks.filter(task => {
-        return !task.isCompleted;
-      })
-    );
+    this.setState({ isLoading: true });
+    let clearedTasks = this.state.tasks.filter(task => {
+      return !task.isCompleted;
+    });
+    this.setTasks();
   }
+
   deleteTask(id) {
+    this.setState({ isLoading: true });
     APIClient.endpoints.todos.delete({ id }).then(({ data }) => {
       if (data) {
         this.setTasks(
@@ -135,18 +150,22 @@ class TodoApp extends React.Component {
       }
     });
   }
+
   getTaskLeftCount() {
     return this.state.tasks.filter(task => {
       return !task.isCompleted;
     }).length;
   }
+
   render() {
+    const { isLoading, filter } = this.state;
     let taskLeftCount = this.getTaskLeftCount();
     let allFilteredTasks = this.getFilteredTasks();
     let filteredTasks = this.getCurrentPageTasks(
       this.state.currentPage,
       TASKS_PER_PAGE
     );
+
     return (
       <main>
         <section className="hero is-primary">
@@ -159,7 +178,14 @@ class TodoApp extends React.Component {
         </section>
         <section className="section add-todo">
           <div className="container">
-            <TodoForm onTaskAdd={task => this.addTask(task)} />
+            <div className="media">
+              <div className="media-left">
+                {isLoading ? <LoadingSpinner isSmall={true} /> : null}
+              </div>
+              <div className="media-content">
+                <TodoForm onTaskAdd={task => this.addTask(task)} />
+              </div>
+            </div>
           </div>
         </section>
         <section className="section todo-list">
@@ -185,7 +211,7 @@ class TodoApp extends React.Component {
           <div className="container">
             <TodoFilter
               taskLeft={taskLeftCount}
-              filter={this.state.filter}
+              filter={filter}
               onClearCompleted={() => this.clearCompleted()}
             />
           </div>
@@ -194,4 +220,5 @@ class TodoApp extends React.Component {
     );
   }
 }
+
 export default withRouter(TodoApp);
