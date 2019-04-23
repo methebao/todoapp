@@ -1,0 +1,14 @@
+@import "../../styles/abstracts/all";
+
+.filter {
+  @include respond(phone) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    > div {
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

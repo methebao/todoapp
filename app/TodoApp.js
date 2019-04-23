@@ -135,7 +135,7 @@ class TodoApp extends React.Component {
     let clearedTasks = this.state.tasks.filter(task => {
       return !task.isCompleted;
     });
-    this.setTasks();
+    this.setTasks(clearedTasks);
   }
 
   deleteTask(id) {

@@ -1,9 +1,10 @@
 import { connect } from "react-redux";
-// import { toggleTodo } from "../actions";
-// import TodoList from "../components/TodoList";
+import { toogleTask, deleteTask, editTask } from "../actions";
+import TodoList from "../../todoApp/TodoList";
 import { filters } from "../actions";
+import { TASKS_PER_PAGE } from "../constants";
 
-const getVisibleTasks = (tasks, filter) => {
+const getFilteredTasks = (tasks, filter) => {
   switch (filter) {
     case filters.SHOW_ALL:
       return tasks;
@@ -15,16 +16,29 @@ const getVisibleTasks = (tasks, filter) => {
       throw new Error("Unknown filter: " + filter);
   }
 };
+const getCurrentPageTasks = (page, tasks, filter) => {
+  let filteredTasks = getFilteredTasks(tasks, filter);
+  let startPageIndex = page * TASKS_PER_PAGE - TASKS_PER_PAGE;
+  let pageTask = [];
+  for (let i = startPageIndex; i < startPageIndex + TASKS_PER_PAGE; i++) {
+    if (filteredTasks[i]) {
+      pageTask.push(filteredTasks[i]);
+    }
+  }
+  return pageTask;
+};
 
-const mapStateToProps = state => ({
-  tasks: getVisibleTasks(state.todos, state.filters)
+const mapStateToProps = ({ page, tasks, filter }) => ({
+  tasks: getCurrentPageTasks(page, tasks, filter)
 });
 
 const mapDispatchToProps = dispatch => ({
-  toggleTodo: id => dispatch(toggleTodo(id))
+  onTaskToggle: id => dispatch(toogleTask(id)),
+  onTaskDelete: id => dispatch(deleteTask(id)),
+  onTaskEdit: newTask => dispatch(editTask(newTask))
 });
 
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(TodoList);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TodoList);

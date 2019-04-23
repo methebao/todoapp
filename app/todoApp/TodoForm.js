@@ -6,6 +6,9 @@ const TodoForm = ({ onTaskAdd }) => {
   let input;
   const handleKeyPress = e => {
     if (e.key === "Enter") {
+      if (!input.value) {
+        return;
+      }
       let task = {
         id: uuid(),
         content: input.value,
