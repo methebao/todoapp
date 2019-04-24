@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43c55791-6570-4342-abfe-43251fa17de2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/todoAppRedux/containers/LoadingSpinnerContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/todoAppRedux/reducers/spinner.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/TodoApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/TodoApp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/TodoAppRedux.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/TodoAppRedux.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/LoadingSpinner.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/LoadingSpinner.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/todoApp/Todo.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/todoApp/Todo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/todoApp/TodoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/todoApp/TodoList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/todoAppRedux/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/todoAppRedux/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/todoAppRedux/constants/action-types.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/todoAppRedux/constants/action-types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/todoAppRedux/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/todoAppRedux/reducers/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,7 +18,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/TodoAppRedux.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
+            <state relative-caret-position="-403">
               <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -70,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/TodoApp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="647">
-              <caret line="182" column="52" selection-start-line="182" selection-start-column="43" selection-end-line="182" selection-end-column="52" />
+            <state relative-caret-position="264">
+              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <element signature="e#2703#2945#0" />
@@ -119,11 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/todoApp/Todo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="24" column="3" lean-forward="true" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
+            <state relative-caret-position="336">
+              <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -234,13 +224,13 @@
         <option value="$PROJECT_DIR$/app/todoAppRedux/constants/action-types.js" />
         <option value="$PROJECT_DIR$/app/todoAppRedux/reducers/spinner.js" />
         <option value="$PROJECT_DIR$/app/todoAppRedux/reducers/index.js" />
-        <option value="$PROJECT_DIR$/app/TodoApp.js" />
         <option value="$PROJECT_DIR$/app/components/LoadingSpinner.js" />
         <option value="$PROJECT_DIR$/app/todoAppRedux/containers/LoadingSpinnerContainer.js" />
         <option value="$PROJECT_DIR$/app/TodoAppRedux.js" />
         <option value="$PROJECT_DIR$/app/todoAppRedux/actions/index.js" />
         <option value="$PROJECT_DIR$/app/todoApp/TodoList.js" />
         <option value="$PROJECT_DIR$/app/todoApp/Todo.js" />
+        <option value="$PROJECT_DIR$/app/TodoApp.js" />
       </list>
     </option>
   </component>
@@ -345,6 +335,11 @@
             <path>
               <item name="todo-react" type="b2602c69:ProjectViewProjectNode" />
               <item name="todo-react" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="todo-react" type="b2602c69:ProjectViewProjectNode" />
+              <item name="todo-react" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -438,7 +433,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32961932" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50228727" side_tool="true" weight="0.26740947" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49771273" weight="0.26090994" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49771273" visible="true" weight="0.26090994" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -804,31 +799,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/TodoAppRedux.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/todoAppRedux/reducers/spinner.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
           <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/TodoApp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
-          <caret line="182" column="52" selection-start-line="182" selection-start-column="43" selection-end-line="182" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#2703#2945#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -891,10 +865,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/todoApp/Todo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="24" column="3" lean-forward="true" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
+        <state relative-caret-position="336">
+          <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/TodoAppRedux.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-403">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/TodoApp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#2703#2945#0" />
           </folding>
         </state>
       </provider>

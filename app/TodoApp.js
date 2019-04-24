@@ -9,7 +9,7 @@ import LoadingSpinner from "./components/LoadingSpinner";
 
 import "./styles/main.scss";
 
-const TASKS_PER_PAGE = 2;
+const TASKS_PER_PAGE = 4;
 
 class TodoApp extends React.Component {
   constructor(props) {
