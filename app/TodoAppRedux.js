@@ -23,7 +23,7 @@ class TodoAppRedux extends React.Component {
             <div className="container">
               <div style={{ display: "inline-block" }}>
                 <h1 className="title">TodoApp</h1>
-                <h2 className="subtitle">Using only React</h2>
+                <h2 className="subtitle">Using React + Redux</h2>
               </div>
               <div style={{ float: "right" }}>
                 <MessageBox />
