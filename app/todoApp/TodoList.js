@@ -9,7 +9,7 @@ const TodoList = ({ tasks, onTaskToggle, onTaskDelete, onTaskEdit }) => {
         key={task.id}
         {...task}
         onCheckBoxToggle={() => {
-          onTaskToggle(task.id);
+          onTaskToggle(task);
         }}
         onDeleteButtonClick={() => {
           onTaskDelete(task.id);

@@ -193,7 +193,7 @@ class TodoApp extends React.Component {
             <div className="box">
               <TodoList
                 tasks={filteredTasks}
-                onTaskToggle={id => this.toogleTask(id)}
+                onTaskToggle={task => this.toogleTask(task.id)}
                 onTaskDelete={id => this.deleteTask(id)}
                 onTaskEdit={newTask => this.editTask(newTask)}
               />

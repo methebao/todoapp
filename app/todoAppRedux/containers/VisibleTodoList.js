@@ -28,12 +28,12 @@ const getCurrentPageTasks = (page, tasks, filter) => {
   return pageTask;
 };
 
-const mapStateToProps = ({ page, tasks, filter }) => ({
-  tasks: getCurrentPageTasks(page, tasks, filter)
+const mapStateToProps = ({ page, todos, filter }) => ({
+  tasks: getCurrentPageTasks(page, todos.tasks, filter)
 });
 
 const mapDispatchToProps = dispatch => ({
-  onTaskToggle: id => dispatch(toogleTask(id)),
+  onTaskToggle: task => dispatch(toogleTask(task)),
   onTaskDelete: id => dispatch(deleteTask(id)),
   onTaskEdit: newTask => dispatch(editTask(newTask))
 });

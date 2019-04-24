@@ -7,13 +7,14 @@ const getNumberTasksLeft = tasks => {
 };
 
 const mapStateToProps = state => ({
-  taskLeft: getNumberTasksLeft(state.tasks),
+  tasks: state.todos.tasks,
+  taskLeft: getNumberTasksLeft(state.todos.tasks),
   activeFilter: state.filter,
   filters
 });
 
 const mapDispatchToProps = dispatch => ({
-  onClearCompleted: () => dispatch(clearCompleted()),
+  onClearCompleted: tasks => dispatch(clearCompleted(tasks)),
   onFilterSelect: filter => dispatch(setFilter(filter))
 });
 

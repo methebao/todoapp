@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./TodoFilter.module.scss";
 
 const TodoFilter = ({
+  tasks,
   taskLeft,
   activeFilter,
   filters,
@@ -19,7 +20,9 @@ const TodoFilter = ({
       ? "button is-active is-primary"
       : "button";
   };
-
+  const clearCompletedPressed = () => {
+    onClearCompleted(tasks);
+  };
   return (
     <div className="box">
       <div className={`media ${styles.filter}`}>
@@ -52,7 +55,7 @@ const TodoFilter = ({
           </div>
         </div>
         <div className="media-right">
-          <a className="button is-light" onClick={onClearCompleted}>
+          <a className="button is-light" onClick={clearCompletedPressed}>
             Clear Completed
           </a>
         </div>

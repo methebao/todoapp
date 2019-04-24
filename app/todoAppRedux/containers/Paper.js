@@ -17,8 +17,8 @@ const getNumberOfPages = tasks => {
   return Math.ceil(tasks.length / TASKS_PER_PAGE);
 };
 
-const mapStateToProps = ({ page, tasks }) => ({
-  pages: getNumberOfPages(tasks),
+const mapStateToProps = ({ page, todos }) => ({
+  pages: getNumberOfPages(todos.tasks),
   currentPage: page
 });
 const mapDispatchToProps = dispatch => ({

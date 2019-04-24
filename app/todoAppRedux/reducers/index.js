@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-import tasks from "./tasks";
+import todos from "./todos";
 import filter from "./filter";
 import page from "./page";
 export default combineReducers({
-  tasks,
+  todos,
   filter,
   page
 });
