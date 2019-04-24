@@ -2,24 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43c55791-6570-4342-abfe-43251fa17de2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/todoAppRedux/components/MessageBox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/todoAppRedux/reducers/requestHelper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/todoAppRedux/reducers/todos.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/TodoApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/TodoApp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/TodoAppRedux.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/TodoAppRedux.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/todoApp/TodoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/todoApp/TodoList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/todoAppRedux/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/todoAppRedux/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/todoAppRedux/components/TodoFilter.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/todoAppRedux/components/TodoFilter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/todoAppRedux/components/MessageBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/todoAppRedux/components/MessageBox.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/todoAppRedux/constants/action-types.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/todoAppRedux/constants/action-types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/todoAppRedux/containers/Paper.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/todoAppRedux/containers/Paper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/todoAppRedux/containers/TodoFilterContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/todoAppRedux/containers/TodoFilterContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/todoAppRedux/containers/VisibleTodoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/todoAppRedux/containers/VisibleTodoList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/todoAppRedux/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/todoAppRedux/reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/todoAppRedux/reducers/tasks.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/todoAppRedux/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/todoAppRedux/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/todoAppRedux/reducers/requestHelper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/todoAppRedux/reducers/todos.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/todoAppRedux/reducers/todos.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -45,6 +32,18 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/todoAppRedux/reducers/filter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="11" column="18" selection-end-line="12" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/todoAppRedux/reducers/page.js">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -52,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/TodoAppRedux.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="24" column="50" lean-forward="true" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
+            <state relative-caret-position="279">
+              <caret line="66" column="48" lean-forward="true" selection-start-line="66" selection-end-line="66" selection-end-column="48" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -61,14 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/todoAppRedux/actions/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="58" column="45" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#49#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-1172">
+              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -76,17 +72,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/todoAppRedux/constants/action-types.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="192">
+              <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/todoAppRedux/constants/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="24">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/todoAppRedux/components/MessageBox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+            <state relative-caret-position="192">
+              <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -108,22 +113,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/todoAppRedux/containers/TodoFormContainer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/todoAppRedux/reducers/todos.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="654">
-              <caret line="59" column="11" lean-forward="true" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
+            <state relative-caret-position="277">
+              <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
               <folding>
                 <element signature="e#0#153#0" expanded="true" />
               </folding>
@@ -218,7 +211,6 @@
         <option value="$PROJECT_DIR$/app/todoApp/TodoList.js" />
         <option value="$PROJECT_DIR$/app/TodoApp.js" />
         <option value="$PROJECT_DIR$/app/todoAppRedux/reducers/requestHelper.js" />
-        <option value="$PROJECT_DIR$/app/todoAppRedux/constants/action-types.js" />
         <option value="$PROJECT_DIR$/app/todoAppRedux/reducers/toogleTask.js" />
         <option value="$PROJECT_DIR$/app/todoAppRedux/reducers/toggleTask.js" />
         <option value="$PROJECT_DIR$/app/todoAppRedux/reducers/tasks.js" />
@@ -226,11 +218,12 @@
         <option value="$PROJECT_DIR$/app/todoAppRedux/containers/TodoFilterContainer.js" />
         <option value="$PROJECT_DIR$/app/todoAppRedux/containers/Paper.js" />
         <option value="$PROJECT_DIR$/app/todoAppRedux/reducers/index.js" />
-        <option value="$PROJECT_DIR$/app/todoAppRedux/components/MessageBox.js" />
         <option value="$PROJECT_DIR$/app/TodoAppRedux.module.scss" />
         <option value="$PROJECT_DIR$/app/TodoAppRedux.js" />
-        <option value="$PROJECT_DIR$/app/todoAppRedux/reducers/todos.js" />
+        <option value="$PROJECT_DIR$/app/todoAppRedux/constants/action-types.js" />
         <option value="$PROJECT_DIR$/app/todoAppRedux/actions/index.js" />
+        <option value="$PROJECT_DIR$/app/todoAppRedux/reducers/todos.js" />
+        <option value="$PROJECT_DIR$/app/todoAppRedux/components/MessageBox.js" />
       </list>
     </option>
   </component>
@@ -298,6 +291,13 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="todoAppRedux" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="todo-react" type="b2602c69:ProjectViewProjectNode" />
+              <item name="todo-react" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="todoAppRedux" type="462c0819:PsiDirectoryNode" />
+              <item name="constants" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="todo-react" type="b2602c69:ProjectViewProjectNode" />
@@ -608,13 +608,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/todoAppRedux/constants/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/todoAppRedux/components/TodoFilter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="633">
@@ -704,13 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/todoAppRedux/reducers/requestHelper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/todoAppRedux/containers/VisibleTodoList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
@@ -741,16 +727,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/todoAppRedux/reducers/filter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="18" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/todoApp/TodoForm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="55">
@@ -768,16 +744,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/TodoAppRedux.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="24" column="50" lean-forward="true" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/todoAppRedux/containers/TodoFormContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -785,6 +751,20 @@
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/todoAppRedux/reducers/toggleTask.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/todoAppRedux/reducers/requestHelper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -798,30 +778,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/todoAppRedux/reducers/page.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/todoAppRedux/components/MessageBox.js">
+    <entry file="file://$PROJECT_DIR$/app/todoAppRedux/reducers/filter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        <state relative-caret-position="264">
+          <caret line="11" column="18" selection-end-line="12" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/todoAppRedux/reducers/page.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/todoAppRedux/constants/action-types.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/todoAppRedux/reducers/toggleTask.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        <state relative-caret-position="192">
+          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -836,22 +809,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/todoAppRedux/reducers/todos.js">
+    <entry file="file://$PROJECT_DIR$/app/todoAppRedux/constants/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="654">
-          <caret line="59" column="11" lean-forward="true" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
+        <state relative-caret-position="24">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/TodoAppRedux.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="66" column="48" lean-forward="true" selection-start-line="66" selection-end-line="66" selection-end-column="48" />
           <folding>
-            <element signature="e#0#153#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/todoAppRedux/actions/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="58" column="45" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
+        <state relative-caret-position="-1172">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/todoAppRedux/reducers/todos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
           <folding>
-            <element signature="e#0#49#0" expanded="true" />
+            <element signature="e#0#153#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/todoAppRedux/components/MessageBox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

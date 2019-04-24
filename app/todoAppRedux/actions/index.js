@@ -6,6 +6,7 @@ import {
   TOOGLE_TASK,
   DELETE_TASK,
   CLEAR_COMPLETED,
+  CLOSE_MESSAGE,
   SET_FILTER,
   CHANGE_PAGE,
   TOOGLE_TASK_FAILURE
@@ -73,6 +74,9 @@ export const clearCompleted = tasks => {
       }
     });
   };
+};
+export const closeMessage = () => {
+  return { type: CLOSE_MESSAGE };
 };
 
 export const setFilter = filter => ({

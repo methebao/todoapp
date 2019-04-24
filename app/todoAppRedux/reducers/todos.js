@@ -4,6 +4,7 @@ import {
   DELETE_TASK,
   EDIT_TASK,
   TOOGLE_TASK,
+  CLOSE_MESSAGE,
   CLEAR_COMPLETED,
   TOOGLE_TASK_FAILURE
 } from "../constants/action-types";
@@ -72,6 +73,7 @@ const todos = (
           message: "Successfully Deleted Task !"
         }
       };
+
     case CLEAR_COMPLETED:
       return {
         tasks: state.tasks.filter(task => !task.isCompleted),
@@ -80,7 +82,14 @@ const todos = (
           message: "Successfully Clear All Completed Task !"
         }
       };
-
+    case CLOSE_MESSAGE:
+      return {
+        ...state,
+        requestResult: {
+          ...state.requestResult,
+          message: null
+        }
+      };
     default:
       return state;
   }

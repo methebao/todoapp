@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
+import { closeMessage, fetchAllTasks } from "../actions";
 
-const MessageBox = ({ requestResult }) => {
+const MessageBox = ({ requestResult, onCloseMessageBox }) => {
   return requestResult.message ? (
     <article
       className={`message ${
@@ -9,8 +10,12 @@ const MessageBox = ({ requestResult }) => {
       }`}
     >
       <div className="message-header">
-        <p>{requestResult.message}</p>
-        <button className="delete" aria-label="delete" />
+        <p style={{ marginRight: "10px" }}>{requestResult.message}</p>
+        <button
+          className="delete"
+          aria-label="delete"
+          onClick={onCloseMessageBox}
+        />
       </div>
     </article>
   ) : null;
@@ -18,7 +23,10 @@ const MessageBox = ({ requestResult }) => {
 const mapStateToProps = state => ({
   requestResult: state.todos.requestResult
 });
+const mapDispatchToProps = dispatch => ({
+  onCloseMessageBox: () => dispatch(closeMessage())
+});
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(MessageBox);
