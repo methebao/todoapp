@@ -15,11 +15,13 @@ const TodoList = ({ tasks, onTaskToggle, onTaskDelete, onTaskEdit }) => {
           onTaskDelete(task.id);
         }}
         onSubmitEdit={newContent => {
-          onTaskEdit({
-            id: task.id,
-            content: newContent,
-            isCompleted: task.isCompleted
-          });
+          if (newContent !== task.content) {
+            onTaskEdit({
+              id: task.id,
+              content: newContent,
+              isCompleted: task.isCompleted
+            });
+          }
         }}
       />
     );

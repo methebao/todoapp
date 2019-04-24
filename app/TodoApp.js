@@ -180,7 +180,7 @@ class TodoApp extends React.Component {
           <div className="container">
             <div className="media">
               <div className="media-left">
-                {isLoading ? <LoadingSpinner isSmall={true} /> : null}
+                <LoadingSpinner isLoading={isLoading} />
               </div>
               <div className="media-content">
                 <TodoForm onTaskAdd={task => this.addTask(task)} />

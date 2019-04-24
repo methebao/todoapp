@@ -4,45 +4,55 @@ import {
   ADD_TASK,
   EDIT_TASK,
   TOOGLE_TASK,
+  TOOGLE_TASK_FAILURE,
   DELETE_TASK,
   CLEAR_COMPLETED,
   CLOSE_MESSAGE,
   SET_FILTER,
   CHANGE_PAGE,
-  TOOGLE_TASK_FAILURE
+  TOGGLE_LOADING
 } from "../constants/action-types";
 APIClient.createResource({ name: "todos" });
 
 export const fetchAllTasks = () => {
   return dispatch => {
-    APIClient.endpoints.todos
-      .getAll()
-      .then(({ data }) => dispatch({ type: FETCH_TASKS, payload: data }));
+    dispatch({ type: TOGGLE_LOADING });
+    APIClient.endpoints.todos.getAll().then(({ data }) => {
+      dispatch({ type: FETCH_TASKS, payload: data });
+      dispatch({ type: TOGGLE_LOADING });
+    });
   };
 };
 export const addTask = payload => {
   return dispatch => {
+    dispatch({ type: TOGGLE_LOADING });
     APIClient.endpoints.todos.create(payload).then(({ data }) => {
       if (data) {
-        return dispatch({ type: ADD_TASK, payload: data });
+        dispatch({ type: ADD_TASK, payload: data });
+        dispatch({ type: TOGGLE_LOADING });
       }
     });
   };
 };
 export const editTask = payload => {
   return dispatch => {
+    dispatch({ type: TOGGLE_LOADING });
+
     APIClient.endpoints.todos.update(payload).then(({ data }) => {
       if (data) {
-        return dispatch({ type: EDIT_TASK, payload });
+        dispatch({ type: EDIT_TASK, payload });
+        dispatch({ type: TOGGLE_LOADING });
       }
     });
   };
 };
 export const deleteTask = id => {
   return dispatch => {
+    dispatch({ type: TOGGLE_LOADING });
     APIClient.endpoints.todos.delete({ id }).then(({ data }) => {
       if (data) {
-        return dispatch({ type: DELETE_TASK, id });
+        dispatch({ type: DELETE_TASK, id });
+        dispatch({ type: TOGGLE_LOADING });
       }
     });
   };
@@ -57,7 +67,7 @@ export const toogleTask = task => {
       .update(newTaskToggled)
       .then(({ data }) => {
         if (data) {
-          return dispatch({ type: TOOGLE_TASK, task });
+          return dispatch({ type: TOOGLE_TASK, data });
         }
       })
       .catch(error => {
@@ -68,11 +78,13 @@ export const toogleTask = task => {
 };
 export const clearCompleted = tasks => {
   return dispatch => {
+    dispatch({ type: TOGGLE_LOADING });
     tasks.forEach(task => {
       if (task.isCompleted) {
-        return dispatch(deleteTask(task.id));
+        dispatch(deleteTask(task.id));
       }
     });
+    dispatch({ type: TOGGLE_LOADING });
   };
 };
 export const closeMessage = () => {

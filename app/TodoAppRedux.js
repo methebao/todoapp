@@ -3,8 +3,8 @@ import { Provider } from "react-redux";
 import store from "./todoAppRedux/store/index";
 import { connect } from "react-redux";
 import VisibleTodoList from "./todoAppRedux/containers/VisibleTodoList";
-import LoadingSpinner from "./components/LoadingSpinner";
 import TodoFormContainer from "./todoAppRedux/containers/TodoFormContainer";
+import LoadingSpinnerContainer from "./todoAppRedux/containers/LoadingSpinnerContainer";
 import Paper from "./todoAppRedux/containers/Paper";
 import TodoFilterContainer from "./todoAppRedux/containers/TodoFilterContainer";
 import MessageBox from "./todoAppRedux/components/MessageBox";
@@ -34,9 +34,9 @@ class TodoAppRedux extends React.Component {
         <section className="section add-todo">
           <div className="container">
             <div className="media">
-              {/*<div className="media-left">*/}
-              {/*  {isLoading ? <LoadingSpinner isSmall={true} /> : null}*/}
-              {/*</div>*/}
+              <div className="media-left">
+                <LoadingSpinnerContainer />
+              </div>
 
               <div className="media-content">
                 <TodoFormContainer />
