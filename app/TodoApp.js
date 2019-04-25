@@ -30,7 +30,7 @@ class TodoApp extends React.Component {
       false
     );
     this.setupRouteFilters();
-    APIClient.endpoints.todos.getAll().then(({ data }) => this.setTasks(data));
+    this.fetchTasks();
   }
 
   componentWillUnmount() {
@@ -40,7 +40,16 @@ class TodoApp extends React.Component {
       false
     );
   }
+  async fetchTasks() {
+    try {
+      let { data } = await APIClient.endpoints.todos.getAll();
+      this.setTasks(data);
+    } catch (err) {
+      console.log(err);
+    }
 
+    // APIClient.endpoints.todos.getAll().then(({ data }) => this.setTasks(data));
+  }
   getFilteredTasks() {
     return this.state.tasks.filter(task => {
       switch (this.state.filter) {
@@ -91,28 +100,32 @@ class TodoApp extends React.Component {
     this.setState({ tasks, isLoading: false });
   }
 
-  addTask(task) {
-    APIClient.endpoints.todos.create(task).then(response => {
+  async addTask(task) {
+    let response = await APIClient.endpoints.todos.create(task);
+    try {
       if (response.status === 201 || response === 200) {
         this.setTasks([...this.state.tasks, task]);
       }
-    });
+    } catch (err) {
+      console.log(err);
+    }
   }
 
-  editTask(newTask) {
+  async editTask(newTask) {
     this.setState({ isLoading: true });
-    APIClient.endpoints.todos.update(newTask).then(({ data }) => {
-      if (data) {
-        this.setTasks(
-          this.state.tasks.map(task => {
-            if (task.id === data.id) {
-              task.content = data.content;
-            }
-            return task;
-          })
-        );
-      }
-    });
+    try {
+      let { data } = await APIClient.endpoints.todos.update(newTask);
+      this.setTasks(
+        this.state.tasks.map(task => {
+          if (task.id === data.id) {
+            task.content = data.content;
+          }
+          return task;
+        })
+      );
+    } catch (err) {
+      console.log(err);
+    }
   }
   toogleTask(id) {
     this.setTasks(
@@ -130,25 +143,31 @@ class TodoApp extends React.Component {
     );
   }
 
-  clearCompleted() {
+  async clearCompleted() {
     this.setState({ isLoading: true });
-    let clearedTasks = this.state.tasks.filter(task => {
-      return !task.isCompleted;
-    });
-    this.setTasks(clearedTasks);
+    for (let task of this.state.tasks) {
+      if (task.isCompleted) {
+        await this.deleteTask(task.id);
+        let clearedTasks = this.state.tasks.filter(task => {
+          return !task.isCompleted;
+        });
+        this.setTasks(clearedTasks);
+      }
+    }
   }
 
-  deleteTask(id) {
+  async deleteTask(id) {
     this.setState({ isLoading: true });
-    APIClient.endpoints.todos.delete({ id }).then(({ data }) => {
-      if (data) {
-        this.setTasks(
-          this.state.tasks.filter(task => {
-            return id !== task.id;
-          })
-        );
-      }
-    });
+    try {
+      let { data } = await APIClient.endpoints.todos.delete({ id });
+      this.setTasks(
+        this.state.tasks.filter(task => {
+          return id !== task.id;
+        })
+      );
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   getTaskLeftCount() {

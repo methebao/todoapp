@@ -3,10 +3,10 @@ import React, { Component } from "react";
 import Todo from "./Todo";
 
 const TodoList = ({ tasks, onTaskToggle, onTaskDelete, onTaskEdit }) => {
-  return tasks.map(task => {
+  return tasks.map((task, index) => {
     return (
       <Todo
-        key={task.id}
+        key={index}
         {...task}
         onCheckBoxToggle={() => {
           onTaskToggle(task);
