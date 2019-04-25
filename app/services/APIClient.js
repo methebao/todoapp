@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "http://5cbbc7e8fa84180014bdb0e5.mockapi.io/api";
+const baseURL = "//5cbbc7e8fa84180014bdb0e5.mockapi.io/api";
 class APIClient {
   constructor({ url }) {
     this.url = url;
