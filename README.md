@@ -8,7 +8,7 @@
 
 > Online demo: <a href="http://todoapp.thebaodev.me" target="_blank">**Live**</a>
 
-[![DEMO TODO APP SCREENSHOOT](http://github.com/methebao/todoapp/blob/master/demo-jpg.png)]()
+[![DEMO TODO APP SCREENSHOOT](https://github.com/methebao/todoapp/blob/master/demo-jpg.png)]()
 
 - 1 Interface Design with 2 ways to develop UI which are only React and with Redux intergrated.
 
